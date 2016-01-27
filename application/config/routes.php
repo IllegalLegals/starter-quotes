@@ -39,8 +39,24 @@
 */
 
 $route['default_controller'] = "welcome";
+$route['sleep'] = 'first/zzz';
 $route['404_override'] = '';
+$route['show/(:num)'] = "first/gimme/$1";
+$route['lock/(:any)/(:any)'] = 'welcome/shucks';
+$route['([a-z]{4})/bingo'] = 'bingo';
+$route['dunno'] = function(){
+    $source = "data/at.jpg";
 
-
+    if (!file_exists($source)) {
+        show_404($source);
+    } else {
+    //  $this->load->helper('file');
+    //  $mimeType = get_mime_by_extension($source);
+        header("Content-type: image/jpeg");
+        header('Content-Disposition: inline');
+        readfile($source);
+    }
+};
+$route['comp(:num)/(:any)'] = "wise/bingo";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
