@@ -57,5 +57,6 @@ $route['dunno'] = function(){
         readfile($source);
     }
 };
+$route['comp(:num)/(:any)'] = "wise/bingo";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
