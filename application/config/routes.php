@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "welcome";
-
+$route['sleep'] = 'first/zzz';
 $route['404_override'] = '';
 
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
